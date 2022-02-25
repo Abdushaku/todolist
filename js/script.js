@@ -10,12 +10,13 @@ const createTask = (e) =>{
 let todo = {
     id:todos.length  === 0 ? 1:todos[todos.length-1].id+1,
     message:message.value,
-    description:descr.value,
+    descr:descr.value,
     status:false,
     date:new Date()
     }
     todos.push(todo)
     message.value=''
+    descr.value=''
     console.log(todos);
     renderTodos()
     }else{
@@ -34,7 +35,7 @@ const renderTodos = ()=>{
     output.innerHTML=''
     todos.map(todo =>{
         let block = document.createElement('div')
-        block.style.background=todo.status===true?'coral': 'purple'
+        block.style.background=todo.status===true?'coral': 'aqua'
 
         let mess = document.createElement('h2')
         let ness = document.createElement('h3')
@@ -68,7 +69,7 @@ ${current_date.getFullYear()} ${current_date.getHours()}:${current_date.getMinut
         
         
         
-        descriptionbtn.textContent = 'description'
+        descriptionbtn.textContent = 'descr'
         del.textContent = 'Delete'
         edit.textContent = 'Edit'
         done.textContent = 'Done'
